@@ -140,24 +140,48 @@ def display_metric(label, value, explanation, status):
 # --- PAGE 1: HOME ---
 # --- ---------------------- ---
 if page == "🏠 Home: Introduction":
-    st.title("📊 SmartPLS Research Assistant: Interactive Guide for PLS-SEM Analysis and Reporting!")
+    st.title("📊 SmartPLS Research Assistant")
+    st.markdown(
+        """
+        <div style="text-align:center; background-color:#f8f9fa; border-radius:10px; padding:20px; margin-bottom:20px;">
+            <h2 style="color:#004e92;">Interactive Guide for PLS-SEM Analysis and Reporting</h2>
+            <p style="font-size:16px; color:#1C2833;">
+                Developed by <b>Mahbub Hassan</b><br>
+                Department of Civil Engineering, Faculty of Engineering, Chulalongkorn University<br>
+                Founder, 
+                <a href="https://www.bdeshi-lab.org/" target="_blank" style="color:#004e92; font-weight:600;">
+                B'Deshi Emerging Research Lab
+                </a>
+            </p>
+            <p style="font-size:15px; color:#424949; margin-top:10px;">
+                Email: <a href="mailto:mahbub.hassan@ieee.org" style="color:#004e92; text-decoration:none;">mahbub.hassan@ieee.org</a>
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.markdown("### Your Step-by-Step Guide to PLS-SEM Analysis")
     st.markdown("""
-    This app is a step-by-step guide to help you interpret the results from your SmartPLS analysis. 
-    It's designed to follow the standard reporting procedure for a PLS-SEM paper.
+    This app provides a structured and educational workflow to help researchers interpret and report 
+    **Partial Least Squares Structural Equation Modeling (PLS-SEM)** results obtained from **SmartPLS**. 
 
-    **Follow the steps in the sidebar in order:**
-    1.  **Measurement Model:** First, you MUST validate your constructs (variables).
-    2.  **Structural Model:** Second, you test the relationships *between* your constructs (your hypotheses).
-    3.  **Advanced Analyses:** Finally, you can explore more complex relationships like mediation, moderation, etc.
+    **Follow the steps in the sidebar:**
+    1. **Measurement Model:** Validate your constructs and assess reliability and validity.
+    2. **Structural Model:** Test hypotheses and evaluate model explanatory power.
+    3. **Advanced Analyses:** Explore mediation, moderation, multigroup analysis (MGA), and fsQCA.
 
-    Use the navigation menu on the left to begin.
+    Use the navigation menu on the left to begin your analytical workflow.
     """)
-    
+
+    st.info("""
+    💡 **Tip:** Each section includes interactive value checkers and interpretive feedback, following methodological standards 
+    outlined by Hair et al. (2019) for PLS-SEM research.
+    """)
+
     st.warning("""
-    **Disclaimer:** This tool is an educational guide, not a substitute for a deep understanding of statistics. 
-    The thresholds provided are common 'rules of thumb' (e.g., from Hair et al.), but you should always 
-    consult your supervisor, journal guidelines, and relevant methodological literature.
+    **Disclaimer:** This tool serves as an educational resource to support learning in quantitative research methods. 
+    Always validate your findings against theoretical grounding, journal requirements, and expert supervision.
     """)
 
 # --- ---------------------- ---
@@ -605,5 +629,6 @@ elif page == "🧬 Step 3: Advanced Analyses":
                 else:
 
                     display_metric(f"Consistency: {consistency:.3f}", "NOT VALID", "This 'recipe' is not a reliable path to the outcome.", "fail")
+
 
 
