@@ -140,7 +140,7 @@ def display_metric(label, value, explanation, status):
 # --- PAGE 1: HOME ---
 # --- ---------------------- ---
 if page == "🏠 Home: Introduction":
-    st.title("📊 Welcome to the SmartPLS Results Assistant!")
+    st.title("📊 Welcome to the SmartPLS Results Assistant  by Mahbub Hassan!")
     st.markdown("### Your Step-by-Step Guide to PLS-SEM Analysis")
     st.markdown("""
     This app is a step-by-step guide to help you interpret the results from your SmartPLS analysis. 
@@ -603,4 +603,5 @@ elif page == "🧬 Step 3: Advanced Analyses":
                 if consistency > 0.80:
                     display_metric(f"Consistency: {consistency:.3f}", "VALID RECIPE", f"This 'recipe' is a valid path to the outcome, explaining {coverage*100:.0f}% of it.", "pass")
                 else:
+
                     display_metric(f"Consistency: {consistency:.3f}", "NOT VALID", "This 'recipe' is not a reliable path to the outcome.", "fail")
